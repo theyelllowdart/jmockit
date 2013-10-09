@@ -4,6 +4,8 @@
  */
 package mockit.internal.state;
 
+import org.apache.avro.util.WeakIdentityHashMap;
+
 import java.lang.instrument.*;
 import java.security.*;
 import java.util.*;
@@ -26,7 +28,7 @@ public final class CachedClassfiles implements ClassFileTransformer
    public static final CachedClassfiles INSTANCE = new CachedClassfiles();
 
    private final Map<ClassLoader, Map<String, byte[]>> classLoadersAndClassfiles =
-      new IdentityHashMap<ClassLoader, Map<String, byte[]>>(2);
+      new WeakIdentityHashMap<ClassLoader, Map<String, byte[]>>();
 
    private ClassDefinition[] classesBeingMocked;
    public void setClassesBeingMocked(ClassDefinition[] classDefs) { classesBeingMocked = classDefs; }

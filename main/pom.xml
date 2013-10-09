@@ -194,5 +194,8 @@
          <groupId>javax.inject</groupId><artifactId>javax.inject</artifactId><version>1</version>
          <optional>true</optional>
       </dependency>
+     <dependency>
+         <groupId>org.apache.avro</groupId><artifactId>avro</artifactId><version>1.7.5</version>
+     </dependency>
    </dependencies>
 </project>
